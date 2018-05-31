@@ -27,3 +27,11 @@ class CommunityName {
         var name: String? = null
     }
 }
+
+class LoginInfo{
+    var payload:String ?=null
+    var success:String ?=null
+    var msg:String ?= null
+    var code:String ?= null
+    var timestamp:String ? =null
+}

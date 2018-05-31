@@ -9,7 +9,6 @@ import com.hzl.proticekotlin.Base.BaseActivity
 import com.hzl.proticekotlin.mvp.model.bean.TabEntity
 import kotlinx.android.synthetic.main.activity_main2.*
 import rx.Observable
-import rx.android.schedulers.AndroidSchedulers
 import rx.functions.Action1
 import rx.schedulers.Schedulers
 import java.util.ArrayList
@@ -43,19 +42,23 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         if (savedInstanceState != null) {
             mIndex = savedInstanceState.getInt("currTabIndex")
         }
         super.onCreate(savedInstanceState)
+//        login("hzl","123456")?.subscribe( {
+//            Log.e("hzl",it.msg)
+//        },{
+//            Log.e("hzl","error"+it.message)
+//        })
         (0 until mTitles.size)
                 .mapTo(mTabEntities) { TabEntity(mTitles[it], mIconSelectIds[it], mIconUnSelectIds[it]) }
     }
 
-
-//    fun login(phone: String, password: String): Observable<LoginResponse>? {
+//
+//    fun login(phone: String, password: String): Observable<LoginInfo>? {
 //        return RetrofitUtil.createApi(AccountApi::class.java)
-//                .login(LoginRequest(phone, password, null))
+//                .loginLocal(phone,password)
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
 //    }

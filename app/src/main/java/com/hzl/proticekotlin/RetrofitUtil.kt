@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit
 object RetrofitUtil {
     var SINGLETON: Retrofit? = null
 //    private val endpoint = "http://120.78.218.241/yy-door-web-leelen2/"
-    private val endpoint = "http://192.168.1.107:8080/"
+//    private val endpoint = "http://192.168.1.107:8080/"
+    private val endpoint = "http://baobab.kaiyanapp.com/api/"
 
     fun <T> createApi(clazz: Class<T>): T {
         if (SINGLETON == null) {
